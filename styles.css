@@ -14,7 +14,7 @@
   --dark-color: #141414;
   --dark-color-light: #8A8A8A;
   --dark-color-lighten: #f2f2f2;
-  --white-color: #fff
+  --white-color: #fff;
 
   /*===== Font and typography =====*/
   --body-font: 'Poppins', sans-serif;
@@ -112,13 +112,63 @@ img{
 }
 
 /*===== LAYOUT =====*/
+.bd-grid{
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  column-gap: 2rem;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
 
+.l-header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--dark-color-lighten);
+}
 
 /*===== NAV =====*/
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+@media screen and (max-width: 768px){
+  .nav_menu{
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    width: 70%;
+    height: 100vh;
+    padding: 2rem;
+    background-color: var(--white-color);
+    transition: .5s;
+  }
+}
+
+.nav_item{
+  margin-bottom: var(--mb-4);
+}
+
+.nav_logo{
+  font-weight: var(--font-semi-bold);
+}
+
+.nav_toggle, .nav_shop{
+  font-size: 1.3rem;
+  cursor: pointer;
+}
 
 /*Show menu*/
-
+.show{
+  left: 0;
+}
 
 /*Active link*/
 
